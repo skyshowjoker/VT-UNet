@@ -19,15 +19,14 @@ class Brats(Dataset):
         self.training = training
         self.datas = []
         self.validation = no_seg
-        self.patterns = ["_t1", "_t1ce", "_t2", "_flair"]
+        self.patterns = ["t2_tse_fs_tra_1"]
         if not no_seg:
-            self.patterns += ["_seg"]
+            self.patterns += ["t2_tra-label_2"]
         for patient_dir in patients_dir:
             patient_id = patient_dir.name
-            paths = [patient_dir / f"{patient_id}{value}.nii.gz" for value in self.patterns]
+            paths = [patient_dir / f"{value}.nii.gz" for value in self.patterns]
             patient = dict(
-                id=patient_id, t1=paths[0], t1ce=paths[1],
-                t2=paths[2], flair=paths[3], seg=paths[4] if not no_seg else None
+                id=patient_id, t1=paths[0], seg=paths[1] if not no_seg else None
             )
             self.datas.append(patient)
 

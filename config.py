@@ -3,7 +3,7 @@
 # --------------------------------------------------------'
 
 user = "YOU"
-BRATS_TRAIN_FOLDERS = "../BRATS2021/Data/RSNA_ASNR_MICCAI_BraTS2021_TrainingData"
+BRATS_TRAIN_FOLDERS = r"C:\joey\master\resource\lymphoma\tag\dataset_test2"
 TEST_FOLDER = "test_data"
 
 
